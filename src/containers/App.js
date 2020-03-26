@@ -4,6 +4,7 @@ import { hot } from 'react-hot-loader/root';
 import { connect } from 'react-redux';
 
 import getData from 'actions/data';
+import Table from 'components/Table';
 
 export class App extends React.Component {
   componentDidMount() {
@@ -12,7 +13,13 @@ export class App extends React.Component {
   }
 
   render() {
-    return <div>Intellisense</div>;
+    const { data } = this.props;
+
+    return (
+      <div>
+        <Table data={data} />
+      </div>
+    );
   }
 }
 
@@ -26,6 +33,7 @@ const mapDispatchToProps = {
 
 App.propTypes = {
   getData: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export const connectedApp = hot(
