@@ -7,9 +7,11 @@ import { Provider } from 'react-redux';
 
 import { connectedApp as App } from 'containers/App';
 import store from 'store';
+import GlobalStyle from './index.styles';
 
 render(
   <Provider store={store}>
+    <GlobalStyle />
     <App />
   </Provider>,
   document.getElementById('app'),
