@@ -5,7 +5,7 @@ import {
 } from 'actions/types';
 
 const initialState = {
-  data: {},
+  data: [],
   loading: false,
   error: '',
 };
@@ -18,12 +18,20 @@ export default (state = initialState, action) => {
         loading: true,
         error: '',
       };
-    case GET_DATA_SUCCESS:
+    case GET_DATA_SUCCESS: {
+      const formatedData = Object.keys(action.data)
+        .slice(1)
+        .map((k) => ({
+          metric: k,
+          times: action.data[k].times,
+          value: action.data[k].values,
+        }));
       return {
         ...state,
-        data: action.data,
+        data: formatedData,
         loading: false,
       };
+    }
     case GET_DATA_ERROR:
       return {
         ...state,
