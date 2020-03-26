@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import getData from 'actions/data';
 import Table from 'components/Table';
+import AppContainer from 'containers/App.styles';
 
 export class App extends React.Component {
   componentDidMount() {
@@ -16,9 +17,9 @@ export class App extends React.Component {
     const { data } = this.props;
 
     return (
-      <div>
+      <AppContainer>
         <Table data={data} />
-      </div>
+      </AppContainer>
     );
   }
 }
