@@ -1,23 +1,31 @@
 import styled from 'styled-components';
 
 export const TableContainer = styled.div`
-  min-width: 80%;
+  width: 500px;
+  margin-right: 2rem;
 `;
 
 export const TableTable = styled.table`
-  width: 100%;
   font-size: 0.9rem;
   text-align: left;
   border-radius: 2px 2px 0 0;
   border-collapse: separate;
   border-spacing: 0;
+  table-layout: fixed;
+`;
+
+export const MetricColumn = styled.col`
+  width: 80%;
+`;
+
+export const ValueColumn = styled.col`
+  width: 20%;
 `;
 
 export const TableThead = styled.thead`
   display: table-header-group;
   vertical-align: middle;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
+  width: 50%;
 `;
 
 export const TableTh = styled.th`
@@ -28,7 +36,8 @@ export const TableTh = styled.th`
   font-weight: 500;
   text-align: left;
   transition: background 0.3s ease;
-  padding: 1rem;
+  padding: 0.75rem;
+  width: 25%;
 `;
 
 export const TableTr = styled.tr`
@@ -38,9 +47,12 @@ export const TableTr = styled.tr`
   &:hover {
     background-color: rgba(0, 0, 0, 0.05);
   }
+  cursor: pointer;
+  background-color: ${({ isSelected }) => (isSelected ? '#ddd' : '#fff')};
+  transition: background 0.3s ease;
 `;
 
 export const TableTd = styled.td`
-  padding: 0.75rem 1rem;
+  padding: 0.75rem;
   color: rgba(0, 0, 0, 0.65);
 `;
