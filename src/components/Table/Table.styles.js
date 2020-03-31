@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 export const TableContainer = styled.div`
-  width: 500px;
-  margin-right: 2rem;
+  max-width: 46rem;
+  margin-bottom: 1rem;
+  @media (min-width: 1280px) {
+    max-width: 28rem;
+  }
 `;
 
 export const TableTable = styled.table`
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-align: left;
   border-radius: 2px 2px 0 0;
   border-collapse: separate;

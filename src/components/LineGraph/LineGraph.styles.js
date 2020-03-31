@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 export const GraphContainer = styled.div`
-  height: 100%;
-  flex: 1 1 auto;
+  width: 46rem;
 `;
 
 export const GraphSvg = styled.svg`
