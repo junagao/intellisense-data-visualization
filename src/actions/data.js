@@ -3,6 +3,10 @@ import {
   GET_DATA_REQUEST,
   GET_DATA_SUCCESS,
   GET_DATA_ERROR,
+  SET_HOVER,
+  SET_LEGEND_POSITION,
+  SELECT_METRIC,
+  UNSELECT_METRIC,
 } from 'actions/types';
 
 const getDataRequest = () => ({
@@ -19,7 +23,7 @@ const getDataError = (error) => ({
   error,
 });
 
-const getData = () => async (dispatch) => {
+export const getData = () => async (dispatch) => {
   dispatch(getDataRequest());
   try {
     const response = await api.get('/');
@@ -29,4 +33,25 @@ const getData = () => async (dispatch) => {
   }
 };
 
-export default getData;
+export const setHover = (metric, color) => ({
+  type: SET_HOVER,
+  metric,
+  color,
+});
+
+export const setLegendPosition = (x, y) => ({
+  type: SET_LEGEND_POSITION,
+  x,
+  y,
+});
+
+export const selectMetric = (metric, dataset) => ({
+  type: SELECT_METRIC,
+  metric,
+  dataset,
+});
+
+export const unselectMetric = (metric) => ({
+  type: UNSELECT_METRIC,
+  metric,
+});
