@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader/root';
 import { connect } from 'react-redux';
 
-import { getData, setHover, setLegendPosition } from 'actions/data';
+import {
+  getData,
+  setHover,
+  setLegendPosition,
+  selectMetric,
+  unselectMetric,
+} from 'actions/data';
 import { Table, LineGraph } from 'components';
 import AppContainer from 'containers/App.styles';
 
@@ -12,6 +18,14 @@ export class App extends React.Component {
     const { getData } = this.props;
     getData();
   }
+
+  handleToogleMetric = (metric, dataset) => {
+    const { selectMetric, unselectMetric, selectedMetrics } = this.props;
+
+    return selectedMetrics.find((item) => item.metric === metric) === undefined
+      ? selectMetric(metric, dataset)
+      : unselectMetric(metric);
+  };
 
   render() {
     const {
@@ -28,7 +42,11 @@ export class App extends React.Component {
 
     return (
       <AppContainer>
-        <Table data={data} />
+        <Table
+          data={data}
+          onToogleMetric={this.handleToogleMetric}
+          selectedMetrics={selectedMetrics}
+        />
         <LineGraph
           data={data}
           onLineHover={setHover}
@@ -59,6 +77,8 @@ const mapDispatchToProps = {
   getData,
   setHover,
   setLegendPosition,
+  selectMetric,
+  unselectMetric,
 };
 
 App.propTypes = {
@@ -71,6 +91,8 @@ App.propTypes = {
   setLegendPosition: PropTypes.func.isRequired,
   legendXPosition: PropTypes.number.isRequired,
   legendYPosition: PropTypes.number.isRequired,
+  selectMetric: PropTypes.func.isRequired,
+  unselectMetric: PropTypes.func.isRequired,
   selectedMetrics: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
