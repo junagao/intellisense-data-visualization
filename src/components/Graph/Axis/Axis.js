@@ -9,17 +9,17 @@ const yAxisRef = React.createRef();
 
 const Axis = ({ scales, margin, svgDimensions }) => {
   const { xScale, yScale } = scales;
-  const { top, right, bottom, left } = margin;
+  const { marginTop, marginRight, marginBottom, marginLeft } = margin;
   const { width, height } = svgDimensions;
 
   const xAxis = d3
     .axisBottom(xScale)
-    .tickSizeInner(-height + top + bottom)
+    .tickSizeInner(-height + marginTop + marginBottom)
     .tickPadding(10);
 
   const yAxis = d3
     .axisLeft(yScale)
-    .tickSizeInner(-width + left + right)
+    .tickSizeInner(-width + marginLeft + marginRight)
     .tickPadding(10);
 
   d3.select(xAxisRef.current).call(xAxis);
@@ -29,7 +29,7 @@ const Axis = ({ scales, margin, svgDimensions }) => {
     <>
       <AxisG
         ref={xAxisRef}
-        transform={`translate(-${left}, ${height - bottom})`}
+        transform={`translate(-${marginLeft}, ${height - marginBottom})`}
       />
       <AxisG ref={yAxisRef} />
     </>
@@ -38,10 +38,10 @@ const Axis = ({ scales, margin, svgDimensions }) => {
 
 Axis.propTypes = {
   margin: PropTypes.shape({
-    top: PropTypes.number,
-    right: PropTypes.number,
-    bottom: PropTypes.number,
-    left: PropTypes.number,
+    marginTop: PropTypes.number,
+    marginRight: PropTypes.number,
+    marginBottom: PropTypes.number,
+    marginLeft: PropTypes.number,
   }).isRequired,
   scales: PropTypes.shape({
     xScale: PropTypes.func,

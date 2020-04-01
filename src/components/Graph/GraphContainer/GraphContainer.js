@@ -5,29 +5,34 @@ import * as d3 from 'd3';
 import { Axis, AxisLabel, Lines, Legend } from 'components';
 import { GraphDiv, GraphSvg } from './GraphContainer.styles';
 
-const width = 650;
-const height = 450;
-const margin = { top: 30, right: 5, bottom: 45, left: 80 };
-const lineColors = [
-  '#4EAF63',
-  '#EC624F',
-  '#DBC36C',
-  '#F369A3',
-  '#FDB462',
-  '#CCEBC5',
-  '#B3DE69',
-  '#E04530',
-  '#8DD3C7',
-  '#8BC0E4',
-  '#5676DC',
-  '#5664C7',
-  '#8952A5',
-  '#BC80BD',
-  '#BDB4DE',
-  '#FCCDE5',
-  '#FFED6F',
-  '#949494',
-];
+const chartSettings = {
+  width: 650,
+  height: 450,
+  marginTop: 30,
+  marginRight: 5,
+  marginBottom: 45,
+  marginLeft: 80,
+  lineColors: [
+    '#4EAF63',
+    '#EC624F',
+    '#DBC36C',
+    '#F369A3',
+    '#FDB462',
+    '#CCEBC5',
+    '#B3DE69',
+    '#E04530',
+    '#8DD3C7',
+    '#8BC0E4',
+    '#5676DC',
+    '#5664C7',
+    '#8952A5',
+    '#BC80BD',
+    '#BDB4DE',
+    '#FCCDE5',
+    '#FFED6F',
+    '#949494',
+  ],
+};
 
 const GraphContainer = ({
   data,
@@ -42,7 +47,15 @@ const GraphContainer = ({
 }) => {
   if (!data && !selectedMetrics) return {};
 
-  const { top, right, bottom, left } = margin;
+  const {
+    width,
+    height,
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
+    lineColors,
+  } = chartSettings;
 
   const dataToDraw = selectedMetrics.length ? selectedMetrics : data;
 
@@ -61,12 +74,12 @@ const GraphContainer = ({
   const xScale = d3
     .scaleLinear()
     .domain([xMin, xMax])
-    .range([left, width - right]);
+    .range([marginLeft, width - marginRight]);
 
   const yScale = d3
     .scaleLinear()
     .domain([0, yMax])
-    .range([height - bottom, top]);
+    .range([height - marginBottom, marginTop]);
 
   const metricNames = dataToDraw.map(({ metric }) => metric);
 
@@ -89,31 +102,31 @@ const GraphContainer = ({
   return (
     <GraphDiv>
       <GraphSvg
-        width={width + left + right}
-        height={height + bottom}
+        width={width + marginLeft + marginRight}
+        height={height + marginBottom}
         onMouseMove={onMouseMove}
       >
-        <g transform={`translate(${left}, 0)`}>
+        <g transform={`translate(${marginLeft}, 0)`}>
           <Axis
             scales={{ xScale, yScale }}
-            margin={margin}
+            margin={{ marginTop, marginRight, marginBottom, marginLeft }}
             svgDimensions={{ width, height }}
           />
           <AxisLabel
             x={-height / 2}
-            y={right - left}
+            y={marginRight - marginLeft}
             dy="1rem"
             transform="rotate(-90)"
             label="Values"
           />
           <AxisLabel
-            x={width / 2 - left - right}
+            x={width / 2 - marginLeft - marginRight}
             y={height + 5}
             label="Times"
           />
           <Lines
             metrics={metrics}
-            transform={`translate(-${left}, 0)`}
+            transform={`translate(-${marginLeft}, 0)`}
             onLineHover={onLineHover}
           />
           <Legend
