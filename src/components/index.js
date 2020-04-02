@@ -1,2 +1,8 @@
 export { default as Table } from 'components/Table';
-export { default as LineGraph } from 'components/LineGraph';
+export {
+  Axis,
+  AxisLabel,
+  GraphContainer,
+  Legend,
+  Lines,
+} from 'components/Graph';

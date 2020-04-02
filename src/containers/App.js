@@ -10,16 +10,17 @@ import {
   selectMetric,
   unselectMetric,
 } from 'actions/data';
-import { Table, LineGraph } from 'components';
+import { Table, GraphContainer } from 'components';
 import AppContainer from 'containers/App.styles';
 
 export class App extends React.Component {
   componentDidMount() {
     const { getData } = this.props;
+
     getData();
   }
 
-  handleToogleMetric = (metric, dataset) => {
+  handleToggleMetric = (metric, dataset) => {
     const { selectMetric, unselectMetric, selectedMetrics } = this.props;
 
     return selectedMetrics.find((item) => item.metric === metric) === undefined
@@ -27,36 +28,41 @@ export class App extends React.Component {
       : unselectMetric(metric);
   };
 
+  handleMouseMove = (e) => {
+    const { setLegendPosition } = this.props;
+    const graph = e.currentTarget.getBoundingClientRect();
+
+    setLegendPosition(e.clientX - graph.left, e.clientY - graph.top);
+  };
+
   render() {
     const {
       data,
+      selectedMetrics,
       setHover,
-      hoverLineGraph,
-      hoveredMetric,
-      hoveredMetricColor,
-      setLegendPosition,
       legendXPosition,
       legendYPosition,
-      selectedMetrics,
+      hoveredMetricColor,
+      hoverLineGraph,
+      hoveredMetric,
     } = this.props;
-
     return (
       <AppContainer>
         <Table
           data={data}
-          onToogleMetric={this.handleToogleMetric}
+          onToggleMetric={this.handleToggleMetric}
           selectedMetrics={selectedMetrics}
         />
-        <LineGraph
+        <GraphContainer
           data={data}
+          selectedMetrics={selectedMetrics}
+          onMouseMove={this.handleMouseMove}
           onLineHover={setHover}
-          hoverLineGraph={hoverLineGraph}
-          hoveredMetric={hoveredMetric}
-          hoveredMetricColor={hoveredMetricColor}
-          onLegendPosition={setLegendPosition}
           legendXPosition={legendXPosition}
           legendYPosition={legendYPosition}
-          selectedMetrics={selectedMetrics}
+          hoveredMetricColor={hoveredMetricColor}
+          hoverLineGraph={hoverLineGraph}
+          hoveredMetric={hoveredMetric}
         />
       </AppContainer>
     );
@@ -65,12 +71,12 @@ export class App extends React.Component {
 
 const mapStateToProps = (state) => ({
   data: state.data,
-  hoverLineGraph: state.hoverLineGraph,
-  hoveredMetric: state.hoveredMetric,
-  hoveredMetricColor: state.hoveredMetricColor,
+  selectedMetrics: state.selectedMetrics,
   legendXPosition: state.legendXPosition,
   legendYPosition: state.legendYPosition,
-  selectedMetrics: state.selectedMetrics,
+  hoveredMetricColor: state.hoveredMetricColor,
+  hoverLineGraph: state.hoverLineGraph,
+  hoveredMetric: state.hoveredMetric,
 });
 
 const mapDispatchToProps = {
@@ -84,16 +90,16 @@ const mapDispatchToProps = {
 App.propTypes = {
   getData: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  selectedMetrics: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   setHover: PropTypes.func.isRequired,
-  hoverLineGraph: PropTypes.bool.isRequired,
-  hoveredMetric: PropTypes.string.isRequired,
-  hoveredMetricColor: PropTypes.string.isRequired,
-  setLegendPosition: PropTypes.func.isRequired,
   legendXPosition: PropTypes.number.isRequired,
   legendYPosition: PropTypes.number.isRequired,
+  hoveredMetricColor: PropTypes.string.isRequired,
+  hoverLineGraph: PropTypes.bool.isRequired,
+  hoveredMetric: PropTypes.string.isRequired,
+  setLegendPosition: PropTypes.func.isRequired,
   selectMetric: PropTypes.func.isRequired,
   unselectMetric: PropTypes.func.isRequired,
-  selectedMetrics: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export const connectedApp = hot(

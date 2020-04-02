@@ -12,7 +12,7 @@ import {
   TableTd,
 } from './Table.styles';
 
-const Table = ({ data, onToogleMetric, selectedMetrics }) => {
+const Table = ({ data, onToggleMetric, selectedMetrics }) => {
   const renderTableHeader = () => {
     if (data.length) {
       const headers = [
@@ -35,7 +35,7 @@ const Table = ({ data, onToogleMetric, selectedMetrics }) => {
       return (
         <TableTr
           key={metric}
-          onClick={() => onToogleMetric(metric, dataset)}
+          onClick={() => onToggleMetric(metric, dataset)}
           isSelected={
             selectedMetrics.find((item) => item.metric === metric) !== undefined
           }
@@ -74,7 +74,7 @@ Table.propTypes = {
       ),
     }),
   ).isRequired,
-  onToogleMetric: PropTypes.func.isRequired,
+  onToggleMetric: PropTypes.func.isRequired,
   selectedMetrics: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
