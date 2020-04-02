@@ -33,10 +33,12 @@ export const getData = () => async (dispatch) => {
   }
 };
 
-export const setHover = (metric, color) => ({
+export const setHover = (metric, color, time = '', value = '') => ({
   type: SET_HOVER,
   metric,
   color,
+  time,
+  value,
 });
 
 export const setLegendPosition = (x, y) => ({

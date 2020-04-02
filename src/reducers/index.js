@@ -15,6 +15,8 @@ const initialState = {
   hoverLineGraph: false,
   hoveredMetric: '',
   hoveredMetricColor: '',
+  hoveredTime: '',
+  hoveredValue: '',
   legendXPosition: 0,
   legendYPosition: 0,
   selectedMetrics: [],
@@ -53,13 +55,45 @@ export default (state = initialState, action) => {
         loading: false,
         error: action.error,
       };
-    case SET_HOVER:
+    case SET_HOVER: {
+      let value;
+      let time;
+
+      switch (action.time) {
+        case 0:
+          time = '0';
+          break;
+        case '':
+          time = '';
+          break;
+        default:
+          time = action.time.toString();
+      }
+
+      switch (action.value) {
+        case 0:
+          value = '0';
+          break;
+        case '':
+          value = '';
+          break;
+        case null:
+          value = '0';
+          break;
+        default:
+          value = action.value.toFixed(2);
+      }
+
       return {
         ...state,
         hoverLineGraph: !state.hoverLineGraph,
         hoveredMetric: action.metric,
         hoveredMetricColor: action.color,
+        hoveredTime: time,
+        hoveredValue: value,
       };
+    }
+
     case SET_LEGEND_POSITION:
       return {
         ...state,

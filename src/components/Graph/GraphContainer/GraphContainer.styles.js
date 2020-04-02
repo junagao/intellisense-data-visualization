@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
-export const GraphDiv = styled.div``;
+export const GraphDiv = styled.div`
+  max-width: 46rem;
+`;
 
 export const GraphSvg = styled.svg`
-  background-color: #f8f9fa;
+  background-color: #fafafa;
+  border-radius: 0.25rem;
   padding: 1rem;
 `;
