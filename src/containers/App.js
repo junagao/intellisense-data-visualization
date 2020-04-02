@@ -45,6 +45,8 @@ export class App extends React.Component {
       hoveredMetricColor,
       hoverLineGraph,
       hoveredMetric,
+      hoveredTime,
+      hoveredValue,
     } = this.props;
     return (
       <AppContainer>
@@ -57,12 +59,14 @@ export class App extends React.Component {
           data={data}
           selectedMetrics={selectedMetrics}
           onMouseMove={this.handleMouseMove}
-          onLineHover={setHover}
+          onHover={setHover}
           legendXPosition={legendXPosition}
           legendYPosition={legendYPosition}
           hoveredMetricColor={hoveredMetricColor}
           hoverLineGraph={hoverLineGraph}
           hoveredMetric={hoveredMetric}
+          hoveredTime={hoveredTime}
+          hoveredValue={hoveredValue}
         />
       </AppContainer>
     );
@@ -77,6 +81,8 @@ const mapStateToProps = (state) => ({
   hoveredMetricColor: state.hoveredMetricColor,
   hoverLineGraph: state.hoverLineGraph,
   hoveredMetric: state.hoveredMetric,
+  hoveredTime: state.hoveredTime,
+  hoveredValue: state.hoveredValue,
 });
 
 const mapDispatchToProps = {
@@ -97,6 +103,8 @@ App.propTypes = {
   hoveredMetricColor: PropTypes.string.isRequired,
   hoverLineGraph: PropTypes.bool.isRequired,
   hoveredMetric: PropTypes.string.isRequired,
+  hoveredTime: PropTypes.string.isRequired,
+  hoveredValue: PropTypes.string.isRequired,
   setLegendPosition: PropTypes.func.isRequired,
   selectMetric: PropTypes.func.isRequired,
   unselectMetric: PropTypes.func.isRequired,

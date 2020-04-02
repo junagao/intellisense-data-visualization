@@ -3,6 +3,6 @@ export {
   Axis,
   AxisLabel,
   GraphContainer,
-  Legend,
   Lines,
+  Tooltip,
 } from 'components/Graph';

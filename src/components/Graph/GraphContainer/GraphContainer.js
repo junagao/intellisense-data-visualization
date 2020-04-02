@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as d3 from 'd3';
 
-import { Axis, AxisLabel, Lines, Legend } from 'components';
+import { Axis, AxisLabel, Lines, Tooltip } from 'components';
 import { GraphDiv, GraphSvg } from './GraphContainer.styles';
 
 const chartSettings = {
@@ -38,12 +38,14 @@ const GraphContainer = ({
   data,
   selectedMetrics,
   onMouseMove,
-  onLineHover,
+  onHover,
   legendXPosition,
   legendYPosition,
   hoveredMetricColor,
   hoverLineGraph,
   hoveredMetric,
+  hoveredTime,
+  hoveredValue,
 }) => {
   if (!data && !selectedMetrics) return {};
 
@@ -96,11 +98,22 @@ const GraphContainer = ({
       metric: item.metric,
       path: line,
       color: color(item.metric),
+      dataset: item.dataset,
     };
   });
 
   return (
     <GraphDiv>
+      {hoverLineGraph ? (
+        <Tooltip
+          x={legendXPosition}
+          y={legendYPosition}
+          color={hoveredMetricColor}
+          metric={hoveredMetric}
+          time={hoveredTime}
+          value={hoveredValue}
+        />
+      ) : null}
       <GraphSvg
         width={width + marginLeft + marginRight}
         height={height + marginBottom}
@@ -127,15 +140,25 @@ const GraphContainer = ({
           <Lines
             metrics={metrics}
             transform={`translate(-${marginLeft}, 0)`}
-            onLineHover={onLineHover}
+            onHover={onHover}
           />
-          <Legend
-            x={legendXPosition}
-            y={legendYPosition}
-            fill={hoveredMetricColor}
-            hover={hoverLineGraph}
-            text={hoveredMetric}
-          />
+          {metrics.map(({ metric, dataset, color }) => (
+            <g key={color} fill={color}>
+              {dataset.map(({ time, value }) => (
+                <circle
+                  key={time}
+                  cx={xScale(time) - marginLeft}
+                  cy={yScale(value)}
+                  r="3"
+                  stroke="#fff"
+                  onMouseOver={() => onHover(metric, color, time, value)}
+                  onFocus={() => onHover(metric, color, time, value)}
+                  onMouseOut={() => onHover(metric, color, time, value)}
+                  onBlur={() => onHover(metric, color, time, value)}
+                />
+              ))}
+            </g>
+          ))}
         </g>
       </GraphSvg>
     </GraphDiv>
@@ -166,12 +189,14 @@ GraphContainer.propTypes = {
     }),
   ).isRequired,
   onMouseMove: PropTypes.func.isRequired,
-  onLineHover: PropTypes.func.isRequired,
+  onHover: PropTypes.func.isRequired,
   legendXPosition: PropTypes.number.isRequired,
   legendYPosition: PropTypes.number.isRequired,
   hoveredMetricColor: PropTypes.string.isRequired,
   hoverLineGraph: PropTypes.bool.isRequired,
   hoveredMetric: PropTypes.string.isRequired,
+  hoveredTime: PropTypes.string.isRequired,
+  hoveredValue: PropTypes.string.isRequired,
 };
 
 export default GraphContainer;

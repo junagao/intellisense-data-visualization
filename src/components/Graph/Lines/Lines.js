@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 
 import LinePath from './Lines.styles';
 
-const Lines = ({ metrics, onLineHover, transform }) =>
+const Lines = ({ metrics, onHover, transform }) =>
   metrics.map(({ metric, path, color }) => (
     <LinePath
       key={metric}
       d={path}
       stroke={color}
       transform={transform}
-      onMouseOver={() => onLineHover(metric, color)}
-      onFocus={() => onLineHover(metric, color)}
-      onMouseOut={() => onLineHover(metric, color)}
-      onBlur={() => onLineHover(metric, color)}
+      onMouseOver={() => onHover(metric, color)}
+      onFocus={() => onHover(metric, color)}
+      onMouseOut={() => onHover(metric, color)}
+      onBlur={() => onHover(metric, color)}
     />
   ));
 
@@ -25,7 +25,7 @@ Lines.propTypes = {
       color: PropTypes.string,
     }),
   ).isRequired,
-  onLineHover: PropTypes.func.isRequired,
+  onHover: PropTypes.func.isRequired,
   transform: PropTypes.string.isRequired,
 };
 
