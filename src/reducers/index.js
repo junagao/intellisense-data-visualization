@@ -56,8 +56,8 @@ export default (state = initialState, action) => {
         error: action.error,
       };
     case SET_HOVER: {
-      let value;
       let time;
+      let value;
 
       switch (action.time) {
         case 0:
@@ -78,7 +78,7 @@ export default (state = initialState, action) => {
           value = '';
           break;
         case null:
-          value = '0';
+          value = 'null';
           break;
         default:
           value = action.value.toFixed(2);
