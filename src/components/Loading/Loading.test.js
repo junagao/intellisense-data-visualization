@@ -14,11 +14,8 @@ describe('Loading', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render one SpinnerDiv element', () => {
+  it('should render the loading spinner correctly with one SpinnerDiv element and two SpinnerDoubleBounceDiv elements', () => {
     expect(wrapper.find('SpinnerDiv').length).toEqual(1);
-  });
-
-  it('should render two SpinnerDoubleBounceDiv elements', () => {
     expect(wrapper.find('SpinnerDoubleBounceDiv').length).toEqual(2);
   });
 });
