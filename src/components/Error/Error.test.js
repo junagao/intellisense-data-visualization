@@ -19,11 +19,8 @@ describe('ErrorMessage', () => {
     expect(wrapper.find('ErrorDiv').length).toEqual(1);
   });
 
-  it('should render two p elements', () => {
+  it('should render two p elements with the error message', () => {
     expect(wrapper.find('p').length).toEqual(2);
-  });
-
-  it('should render the error message correctly', () => {
     expect(wrapper.find('p').at(0).length).toEqual(1);
     expect(wrapper.find('p').at(0).text()).toEqual(
       `The following unexpected error occurred: ${error}.`,
