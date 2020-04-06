@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip should render correctly given the required props 1`] = `
+<TooltipDiv
+  x={12}
+  y={23}
+>
+  <TooltipH1
+    color="red"
+  >
+    metric A
+  </TooltipH1>
+  <TooltipP>
+    <TooltipSpan>
+      time:
+    </TooltipSpan>
+     
+    20
+  </TooltipP>
+  <TooltipP>
+    <TooltipSpan>
+      value:
+    </TooltipSpan>
+     
+    2342
+  </TooltipP>
+</TooltipDiv>
+`;
