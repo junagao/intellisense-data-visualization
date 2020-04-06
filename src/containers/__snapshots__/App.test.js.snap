@@ -1,0 +1,675 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<App
+  data={
+    Array [
+      Object {
+        "dataset": Array [
+          Object {
+            "time": 0,
+            "value": 10,
+          },
+          Object {
+            "time": 5,
+            "value": 39,
+          },
+          Object {
+            "time": 10,
+            "value": 50,
+          },
+          Object {
+            "time": 15,
+            "value": 130,
+          },
+        ],
+        "metric": "metric A",
+      },
+      Object {
+        "dataset": Array [
+          Object {
+            "time": 0,
+            "value": 0,
+          },
+          Object {
+            "time": 5,
+            "value": 24,
+          },
+          Object {
+            "time": 10,
+            "value": 43,
+          },
+          Object {
+            "time": 15,
+            "value": 390,
+          },
+        ],
+        "metric": "metric B",
+      },
+    ]
+  }
+  error=""
+  getData={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
+  hoverLineGraph={true}
+  hoveredMetric="metric A"
+  hoveredMetricColor="#ff0"
+  hoveredTime="20"
+  hoveredValue="1341"
+  legendXPosition={100}
+  legendYPosition={200}
+  loading={false}
+  selectMetric={[MockFunction]}
+  selectedMetrics={Array []}
+  setHover={[MockFunction]}
+  setLegendPosition={[MockFunction]}
+  unselectMetric={[MockFunction]}
+>
+  <AppContainer>
+    <div
+      className="AppContainer-tdgd0t-0 fNvbRC"
+    >
+      <Table
+        data={
+          Array [
+            Object {
+              "dataset": Array [
+                Object {
+                  "time": 0,
+                  "value": 10,
+                },
+                Object {
+                  "time": 5,
+                  "value": 39,
+                },
+                Object {
+                  "time": 10,
+                  "value": 50,
+                },
+                Object {
+                  "time": 15,
+                  "value": 130,
+                },
+              ],
+              "metric": "metric A",
+            },
+            Object {
+              "dataset": Array [
+                Object {
+                  "time": 0,
+                  "value": 0,
+                },
+                Object {
+                  "time": 5,
+                  "value": 24,
+                },
+                Object {
+                  "time": 10,
+                  "value": 43,
+                },
+                Object {
+                  "time": 15,
+                  "value": 390,
+                },
+              ],
+              "metric": "metric B",
+            },
+          ]
+        }
+        onToggleMetric={[Function]}
+        selectedMetrics={Array []}
+      >
+        <TableContainer>
+          <div
+            className="TableContainer-sc-1lkb9oa-0 iyIWLd"
+          >
+            <TableTable>
+              <table
+                className="TableTable-sc-1lkb9oa-1 iMqfxB"
+              >
+                <colgroup>
+                  <MetricColumn>
+                    <col
+                      className="MetricColumn-sc-1lkb9oa-2 lkOWBf"
+                    />
+                  </MetricColumn>
+                  <ValueColumn>
+                    <col
+                      className="ValueColumn-sc-1lkb9oa-3 evHZjH"
+                    />
+                  </ValueColumn>
+                </colgroup>
+                <TableThead>
+                  <thead
+                    className="TableThead-sc-1lkb9oa-4 hSXktf"
+                  >
+                    <TableTr>
+                      <tr
+                        className="TableTr-sc-1lkb9oa-6 cKwTTV"
+                      >
+                        <TableTh
+                          key="metric"
+                        >
+                          <th
+                            className="TableTh-sc-1lkb9oa-5 cFfQkz"
+                          >
+                            Metrics
+                          </th>
+                        </TableTh>
+                        <TableTh
+                          key="value"
+                        >
+                          <th
+                            className="TableTh-sc-1lkb9oa-5 cFfQkz"
+                          >
+                            Values
+                          </th>
+                        </TableTh>
+                      </tr>
+                    </TableTr>
+                  </thead>
+                </TableThead>
+                <tbody>
+                  <TableTr
+                    isSelected={false}
+                    key="metric A"
+                    onClick={[Function]}
+                  >
+                    <tr
+                      className="TableTr-sc-1lkb9oa-6 cKwTTV"
+                      onClick={[Function]}
+                    >
+                      <TableTd>
+                        <td
+                          className="TableTd-sc-1lkb9oa-7 jUbbfA"
+                        >
+                          metric A
+                        </td>
+                      </TableTd>
+                      <TableTd>
+                        <td
+                          className="TableTd-sc-1lkb9oa-7 jUbbfA"
+                        >
+                          130.00
+                        </td>
+                      </TableTd>
+                    </tr>
+                  </TableTr>
+                  <TableTr
+                    isSelected={false}
+                    key="metric B"
+                    onClick={[Function]}
+                  >
+                    <tr
+                      className="TableTr-sc-1lkb9oa-6 cKwTTV"
+                      onClick={[Function]}
+                    >
+                      <TableTd>
+                        <td
+                          className="TableTd-sc-1lkb9oa-7 jUbbfA"
+                        >
+                          metric B
+                        </td>
+                      </TableTd>
+                      <TableTd>
+                        <td
+                          className="TableTd-sc-1lkb9oa-7 jUbbfA"
+                        >
+                          390.00
+                        </td>
+                      </TableTd>
+                    </tr>
+                  </TableTr>
+                </tbody>
+              </table>
+            </TableTable>
+          </div>
+        </TableContainer>
+      </Table>
+      <GraphContainer
+        data={
+          Array [
+            Object {
+              "dataset": Array [
+                Object {
+                  "time": 0,
+                  "value": 10,
+                },
+                Object {
+                  "time": 5,
+                  "value": 39,
+                },
+                Object {
+                  "time": 10,
+                  "value": 50,
+                },
+                Object {
+                  "time": 15,
+                  "value": 130,
+                },
+              ],
+              "metric": "metric A",
+            },
+            Object {
+              "dataset": Array [
+                Object {
+                  "time": 0,
+                  "value": 0,
+                },
+                Object {
+                  "time": 5,
+                  "value": 24,
+                },
+                Object {
+                  "time": 10,
+                  "value": 43,
+                },
+                Object {
+                  "time": 15,
+                  "value": 390,
+                },
+              ],
+              "metric": "metric B",
+            },
+          ]
+        }
+        hoverLineGraph={true}
+        hoveredMetric="metric A"
+        hoveredMetricColor="#ff0"
+        hoveredTime="20"
+        hoveredValue="1341"
+        legendXPosition={100}
+        legendYPosition={200}
+        onHover={[MockFunction]}
+        onMouseMove={[Function]}
+        selectedMetrics={Array []}
+      >
+        <GraphDiv>
+          <div
+            className="GraphDiv-m9xrnx-0 gThkxq"
+          >
+            <Tooltip
+              color="#ff0"
+              metric="metric A"
+              time="20"
+              value="1341"
+              x={100}
+              y={200}
+            >
+              <TooltipDiv
+                x={100}
+                y={200}
+              >
+                <div
+                  className="TooltipDiv-sc-1mzv967-0 cmGwvq"
+                  style={
+                    Object {
+                      "marginLeft": "80px",
+                      "marginTop": "225px",
+                    }
+                  }
+                  x={100}
+                  y={200}
+                >
+                  <TooltipH1
+                    color="#ff0"
+                  >
+                    <h1
+                      className="TooltipH1-sc-1mzv967-1 czwGJI"
+                      color="#ff0"
+                      style={
+                        Object {
+                          "color": "#ff0",
+                        }
+                      }
+                    >
+                      metric A
+                    </h1>
+                  </TooltipH1>
+                  <TooltipP>
+                    <p
+                      className="TooltipP-sc-1mzv967-2 itPXDP"
+                    >
+                      <TooltipSpan>
+                        <span
+                          className="TooltipSpan-sc-1mzv967-3 hJPGxI"
+                        >
+                          time:
+                        </span>
+                      </TooltipSpan>
+                       
+                      20
+                    </p>
+                  </TooltipP>
+                  <TooltipP>
+                    <p
+                      className="TooltipP-sc-1mzv967-2 itPXDP"
+                    >
+                      <TooltipSpan>
+                        <span
+                          className="TooltipSpan-sc-1mzv967-3 hJPGxI"
+                        >
+                          value:
+                        </span>
+                      </TooltipSpan>
+                       
+                      1341
+                    </p>
+                  </TooltipP>
+                </div>
+              </TooltipDiv>
+            </Tooltip>
+            <GraphSvg
+              height={495}
+              onMouseMove={[Function]}
+              width={735}
+            >
+              <svg
+                className="GraphSvg-m9xrnx-1 dKuckX"
+                height={495}
+                onMouseMove={[Function]}
+                width={735}
+              >
+                <g
+                  transform="translate(80, 0)"
+                >
+                  <Axis
+                    margin={
+                      Object {
+                        "marginBottom": 45,
+                        "marginLeft": 80,
+                        "marginRight": 5,
+                        "marginTop": 30,
+                      }
+                    }
+                    scales={
+                      Object {
+                        "xScale": [Function],
+                        "yScale": [Function],
+                      }
+                    }
+                    svgDimensions={
+                      Object {
+                        "height": 450,
+                        "width": 650,
+                      }
+                    }
+                  >
+                    <AxisG
+                      transform="translate(-80, 405)"
+                    >
+                      <g
+                        className="AxisG-sc-1h7pr1m-0 fbrlVp"
+                        transform="translate(-80, 405)"
+                      />
+                    </AxisG>
+                    <AxisG>
+                      <g
+                        className="AxisG-sc-1h7pr1m-0 fbrlVp"
+                      />
+                    </AxisG>
+                  </Axis>
+                  <AxisLabel
+                    dy="1rem"
+                    label="Values"
+                    transform="rotate(-90)"
+                    x={-225}
+                    y={-75}
+                  >
+                    <AxisLabelText
+                      dy="1rem"
+                      transform="rotate(-90)"
+                      x={-225}
+                      y={-75}
+                    >
+                      <text
+                        className="AxisLabelText-sc-1wjljkp-0 hdGMWM"
+                        dy="1rem"
+                        transform="rotate(-90)"
+                        x={-225}
+                        y={-75}
+                      >
+                        Values
+                      </text>
+                    </AxisLabelText>
+                  </AxisLabel>
+                  <AxisLabel
+                    dy={null}
+                    label="Times"
+                    transform={null}
+                    x={240}
+                    y={455}
+                  >
+                    <AxisLabelText
+                      dy={null}
+                      transform={null}
+                      x={240}
+                      y={455}
+                    >
+                      <text
+                        className="AxisLabelText-sc-1wjljkp-0 hdGMWM"
+                        dy={null}
+                        transform={null}
+                        x={240}
+                        y={455}
+                      >
+                        Times
+                      </text>
+                    </AxisLabelText>
+                  </AxisLabel>
+                  <Lines
+                    metrics={
+                      Array [
+                        Object {
+                          "color": "#4EAF63",
+                          "dataset": Array [
+                            Object {
+                              "time": 0,
+                              "value": 10,
+                            },
+                            Object {
+                              "time": 5,
+                              "value": 39,
+                            },
+                            Object {
+                              "time": 10,
+                              "value": 50,
+                            },
+                            Object {
+                              "time": 15,
+                              "value": 130,
+                            },
+                          ],
+                          "metric": "metric A",
+                          "path": "M80,395.38461538461536C142.77777777777777,383.076923076923,205.55555555555554,370.7692307692308,268.33333333333337,367.5C331.1111111111112,364.2307692307692,393.8888888888889,370,456.6666666666667,356.92307692307696C519.4444444444445,343.8461538461539,582.2222222222222,311.923076923077,645,280.00000000000006",
+                        },
+                        Object {
+                          "color": "#EC624F",
+                          "dataset": Array [
+                            Object {
+                              "time": 0,
+                              "value": 0,
+                            },
+                            Object {
+                              "time": 5,
+                              "value": 24,
+                            },
+                            Object {
+                              "time": 10,
+                              "value": 43,
+                            },
+                            Object {
+                              "time": 15,
+                              "value": 390,
+                            },
+                          ],
+                          "metric": "metric B",
+                          "path": "M80,405C142.77777777777777,389.87179487179486,205.55555555555554,374.74358974358984,268.33333333333337,381.92307692307696C331.1111111111112,389.1025641025641,393.8888888888889,418.5897435897436,456.6666666666667,363.65384615384613C519.4444444444445,308.7179487179487,582.2222222222222,169.35897435897434,645,30",
+                        },
+                      ]
+                    }
+                    onHover={[MockFunction]}
+                    transform="translate(-80, 0)"
+                  >
+                    <LinePath
+                      d="M80,395.38461538461536C142.77777777777777,383.076923076923,205.55555555555554,370.7692307692308,268.33333333333337,367.5C331.1111111111112,364.2307692307692,393.8888888888889,370,456.6666666666667,356.92307692307696C519.4444444444445,343.8461538461539,582.2222222222222,311.923076923077,645,280.00000000000006"
+                      key="metric A"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      stroke="#4EAF63"
+                      transform="translate(-80, 0)"
+                    >
+                      <path
+                        className="LinePath-sc-8jmf93-0 kWLTWq"
+                        d="M80,395.38461538461536C142.77777777777777,383.076923076923,205.55555555555554,370.7692307692308,268.33333333333337,367.5C331.1111111111112,364.2307692307692,393.8888888888889,370,456.6666666666667,356.92307692307696C519.4444444444445,343.8461538461539,582.2222222222222,311.923076923077,645,280.00000000000006"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        stroke="#4EAF63"
+                        transform="translate(-80, 0)"
+                      />
+                    </LinePath>
+                    <LinePath
+                      d="M80,405C142.77777777777777,389.87179487179486,205.55555555555554,374.74358974358984,268.33333333333337,381.92307692307696C331.1111111111112,389.1025641025641,393.8888888888889,418.5897435897436,456.6666666666667,363.65384615384613C519.4444444444445,308.7179487179487,582.2222222222222,169.35897435897434,645,30"
+                      key="metric B"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      stroke="#EC624F"
+                      transform="translate(-80, 0)"
+                    >
+                      <path
+                        className="LinePath-sc-8jmf93-0 kWLTWq"
+                        d="M80,405C142.77777777777777,389.87179487179486,205.55555555555554,374.74358974358984,268.33333333333337,381.92307692307696C331.1111111111112,389.1025641025641,393.8888888888889,418.5897435897436,456.6666666666667,363.65384615384613C519.4444444444445,308.7179487179487,582.2222222222222,169.35897435897434,645,30"
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseOut={[Function]}
+                        onMouseOver={[Function]}
+                        stroke="#EC624F"
+                        transform="translate(-80, 0)"
+                      />
+                    </LinePath>
+                  </Lines>
+                  <g
+                    fill="#4EAF63"
+                    key="#4EAF63"
+                  >
+                    <circle
+                      cx={0}
+                      cy={395.38461538461536}
+                      key="0"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                    <circle
+                      cx={188.33333333333337}
+                      cy={367.5}
+                      key="5"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                    <circle
+                      cx={376.6666666666667}
+                      cy={356.92307692307696}
+                      key="10"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                    <circle
+                      cx={565}
+                      cy={280.00000000000006}
+                      key="15"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                  </g>
+                  <g
+                    fill="#EC624F"
+                    key="#EC624F"
+                  >
+                    <circle
+                      cx={0}
+                      cy={405}
+                      key="0"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                    <circle
+                      cx={188.33333333333337}
+                      cy={381.92307692307696}
+                      key="5"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                    <circle
+                      cx={376.6666666666667}
+                      cy={363.65384615384613}
+                      key="10"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                    <circle
+                      cx={565}
+                      cy={30}
+                      key="15"
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseOut={[Function]}
+                      onMouseOver={[Function]}
+                      r="3"
+                      stroke="#fff"
+                    />
+                  </g>
+                </g>
+              </svg>
+            </GraphSvg>
+          </div>
+        </GraphDiv>
+      </GraphContainer>
+    </div>
+  </AppContainer>
+</App>
+`;
