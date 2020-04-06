@@ -1,6 +1,12 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import {
+  Table,
+  GraphContainer,
+  Loading,
+  Error as ErrorComponent,
+} from 'components';
 import { App } from './App';
 
 describe('App', () => {
@@ -60,16 +66,16 @@ describe('App', () => {
 
   it('shows one instance of Loading if is loading', () => {
     wrapper.setProps({ loading: true });
-    expect(wrapper.find('Loading').length).toEqual(1);
+    expect(wrapper.find(Loading).length).toEqual(1);
   });
 
   it('shows one instance of Error if theres an error', () => {
     wrapper.setProps({ error: 'ERROR' });
-    expect(wrapper.find('Error').length).toEqual(1);
+    expect(wrapper.find(ErrorComponent).length).toEqual(1);
   });
 
   it('shows one instance of Table and one of GraphContainer if theres not an error', () => {
-    expect(wrapper.find('Table').length).toEqual(1);
-    expect(wrapper.find('GraphContainer').length).toEqual(1);
+    expect(wrapper.find(Table).length).toEqual(1);
+    expect(wrapper.find(GraphContainer).length).toEqual(1);
   });
 });
