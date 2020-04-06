@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorMessage should render correctly given the required props 1`] = `
+<ErrorDiv>
+  <p>
+    The following unexpected error occurred: 
+    ERROR
+    .
+  </p>
+  <p>
+    Please try again.
+  </p>
+</ErrorDiv>
+`;
