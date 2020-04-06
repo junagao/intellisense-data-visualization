@@ -29,7 +29,6 @@ export const getData = () => async (dispatch) => {
   try {
     const response = await api.get('/');
     const data = response.data.current.data['pt2-scaled'];
-    console.log(data);
     if (data.status === 200) {
       const formatedData = Object.keys(data)
         .slice(1, 19)
@@ -43,7 +42,6 @@ export const getData = () => async (dispatch) => {
             dataset: values,
           };
         });
-      console.log('formatedData', formatedData);
       dispatch(getDataSuccess(formatedData));
     } else {
       dispatch(getDataError(data.message));
