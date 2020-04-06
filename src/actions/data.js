@@ -25,9 +25,14 @@ const getDataError = (error) => ({
 
 export const getData = () => async (dispatch) => {
   dispatch(getDataRequest());
+
   try {
     const response = await api.get('/');
-    dispatch(getDataSuccess(response.data.current.data['pt2-scaled']));
+    if (response.data.current.data['pt2-scaled'].status === 200) {
+      dispatch(getDataSuccess(response.data.current.data['pt2-scaled']));
+    } else {
+      dispatch(getDataError(response.data.current.data['pt2-scaled'].message));
+    }
   } catch (e) {
     dispatch(getDataError(e.message));
   }
