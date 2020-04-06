@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AxisLabel should render correctly given the required props 1`] = `
+<AxisLabelText
+  dy="1rem"
+  transform="rotate(-90)"
+  x={100}
+  y={299}
+>
+  Value
+</AxisLabelText>
+`;
