@@ -10,7 +10,7 @@ import {
   selectMetric,
   unselectMetric,
 } from 'actions/data';
-import { Table, GraphContainer } from 'components';
+import { Table, GraphContainer, Loading, Error } from 'components';
 import AppContainer from 'containers/App.styles';
 
 export class App extends React.Component {
@@ -47,27 +47,40 @@ export class App extends React.Component {
       hoveredMetric,
       hoveredTime,
       hoveredValue,
+      loading,
+      error,
     } = this.props;
+
+    if (loading) {
+      return <Loading />;
+    }
+
     return (
       <AppContainer>
-        <Table
-          data={data}
-          onToggleMetric={this.handleToggleMetric}
-          selectedMetrics={selectedMetrics}
-        />
-        <GraphContainer
-          data={data}
-          selectedMetrics={selectedMetrics}
-          onMouseMove={this.handleMouseMove}
-          onHover={setHover}
-          legendXPosition={legendXPosition}
-          legendYPosition={legendYPosition}
-          hoveredMetricColor={hoveredMetricColor}
-          hoverLineGraph={hoverLineGraph}
-          hoveredMetric={hoveredMetric}
-          hoveredTime={hoveredTime}
-          hoveredValue={hoveredValue}
-        />
+        {error.length ? (
+          <Error error={error} />
+        ) : (
+          <>
+            <Table
+              data={data}
+              onToggleMetric={this.handleToggleMetric}
+              selectedMetrics={selectedMetrics}
+            />
+            <GraphContainer
+              data={data}
+              selectedMetrics={selectedMetrics}
+              onMouseMove={this.handleMouseMove}
+              onHover={setHover}
+              legendXPosition={legendXPosition}
+              legendYPosition={legendYPosition}
+              hoveredMetricColor={hoveredMetricColor}
+              hoverLineGraph={hoverLineGraph}
+              hoveredMetric={hoveredMetric}
+              hoveredTime={hoveredTime}
+              hoveredValue={hoveredValue}
+            />
+          </>
+        )}
       </AppContainer>
     );
   }
@@ -83,6 +96,8 @@ const mapStateToProps = (state) => ({
   hoveredMetric: state.hoveredMetric,
   hoveredTime: state.hoveredTime,
   hoveredValue: state.hoveredValue,
+  loading: state.loading,
+  error: state.error,
 });
 
 const mapDispatchToProps = {
@@ -96,6 +111,8 @@ const mapDispatchToProps = {
 App.propTypes = {
   getData: PropTypes.func.isRequired,
   data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  loading: PropTypes.bool.isRequired,
+  error: PropTypes.string.isRequired,
   selectedMetrics: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   setHover: PropTypes.func.isRequired,
   legendXPosition: PropTypes.number.isRequired,
