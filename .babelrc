@@ -16,6 +16,7 @@
   "plugins": [
     "react-hot-loader/babel",
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
-    ["module-resolver", { "root": ["./src"] }]
+    ["module-resolver", { "root": ["./src"] }],
+    ["babel-plugin-styled-components", { "fileName": false }]
   ]
 }
