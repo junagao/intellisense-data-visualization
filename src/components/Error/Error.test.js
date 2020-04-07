@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import Error from './Error';
 
-describe('ErrorMessage', () => {
+describe('Error', () => {
   let wrapper;
   const error = 'ERROR';
 
