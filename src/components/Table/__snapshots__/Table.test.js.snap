@@ -12,12 +12,12 @@ exports[`Table should render correctly given the required props 1`] = `
         <TableTh
           key="metric"
         >
-          Metrics
+          Metric
         </TableTh>
         <TableTh
           key="value"
         >
-          Values
+          Value
         </TableTh>
       </TableTr>
     </TableThead>
