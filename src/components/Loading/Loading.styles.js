@@ -1,37 +1,22 @@
 import styled from 'styled-components';
 
-const spinnerBackgroundColor = '#999';
-const spinnerSize = '3rem';
-
-export const SpinnerDiv = styled.div`
-  width: ${spinnerSize};
-  height: ${spinnerSize};
-  position: relative;
-  margin: 100px auto;
-`;
-
-export const SpinnerDoubleBounceDiv = styled.div`
-  width: 100%;
-  height: 100%;
+const SpinnerDiv = styled.div`
+  border: 0.25rem solid #f3f3f3;
   border-radius: 50%;
-  background-color: ${spinnerBackgroundColor};
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  animation: bounce 2s infinite ease-in-out;
+  border-top: 0.25rem solid #777;
+  width: 2rem;
+  height: 2rem;
+  animation: spin 0.75s linear infinite;
+  margin: 0 auto;
 
-  :last-child {
-    animation-delay: -1s;
-  }
-
-  @keyframes bounce {
-    0%,
-    100% {
-      transform: scale(0);
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
     }
-    50% {
-      transform: scale(1);
+    100% {
+      transform: rotate(360deg);
     }
   }
 `;
+
+export default SpinnerDiv;
