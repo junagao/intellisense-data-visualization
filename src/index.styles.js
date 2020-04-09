@@ -29,16 +29,6 @@ const GlobalStyle = createGlobalStyle`
   border: 1px solid gray;
   }
 
-  button {
-    border-radius: 0;
-    padding: 0.75em 1em;
-    background-color: transparent;
-  }
-
-  button * {
-    pointer-events: none;
-  }
-
   table {
   table-layout: fixed;
   width: 100%;
