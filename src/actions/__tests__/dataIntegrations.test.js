@@ -2,8 +2,8 @@ import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import moxios from 'moxios';
 import api from 'api';
-import { getData, getDataRequest } from './data';
-import { GET_DATA_REQUEST, GET_DATA_ERROR } from './types';
+import { getData, getDataRequest } from '../data';
+import { GET_DATA_REQUEST, GET_DATA_ERROR } from '../types';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
