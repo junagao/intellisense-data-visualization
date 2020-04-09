@@ -29,7 +29,9 @@ export const getData = () => async (dispatch) => {
   try {
     const response = await api.get('/');
     const data = response.data.current.data['pt2-scaled'];
-    if (data.status === 200) {
+    if (data.status === 500) {
+      dispatch(getDataError(data.message));
+    } else {
       const formatedData = Object.keys(data)
         .slice(1, 19)
         .map((k) => {
@@ -43,8 +45,6 @@ export const getData = () => async (dispatch) => {
           };
         });
       dispatch(getDataSuccess(formatedData));
-    } else {
-      dispatch(getDataError(data.message));
     }
   } catch (e) {
     dispatch(getDataError(e.message));
