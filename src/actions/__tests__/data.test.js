@@ -6,7 +6,7 @@ import {
   setLegendPosition,
   selectMetric,
   unselectMetric,
-} from './data';
+} from '../data';
 import {
   GET_DATA_REQUEST,
   GET_DATA_SUCCESS,
@@ -15,7 +15,7 @@ import {
   SET_LEGEND_POSITION,
   SELECT_METRIC,
   UNSELECT_METRIC,
-} from './types';
+} from '../types';
 
 describe('data actions', () => {
   describe('getDataRequest', () => {

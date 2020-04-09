@@ -7,7 +7,7 @@ import {
   SELECT_METRIC,
   UNSELECT_METRIC,
 } from 'actions/types';
-import reducer from './index';
+import reducer from '../index';
 
 describe('reducer', () => {
   let initialState = {
