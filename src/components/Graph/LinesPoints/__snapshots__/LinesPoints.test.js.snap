@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LinesPoints should render correctly given the required props 1`] = `
+<g
+  fill="red"
+>
+  <circle
+    cx={NaN}
+    key="0"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    r="3"
+    stroke="#fff"
+  />
+  <circle
+    cx={NaN}
+    key="10"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    r="3"
+    stroke="#fff"
+  />
+</g>
+`;
