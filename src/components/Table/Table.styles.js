@@ -11,7 +11,7 @@ export const TableContainer = styled.div`
 export const TableTable = styled.table`
   font-size: 0.85rem;
   text-align: left;
-  border-radius: 2px 2px 0 0;
+  border-radius: 0.25rem 0.25rem 0 0;
   border-collapse: separate;
   border-spacing: 0;
   table-layout: fixed;

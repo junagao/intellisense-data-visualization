@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table should render correctly given the required props 1`] = `
+<TableContainer>
+  <TableTable>
+    <colgroup>
+      <MetricColumn />
+      <ValueColumn />
+    </colgroup>
+    <TableThead>
+      <TableTr>
+        <TableTh
+          key="metric"
+        >
+          Metric
+        </TableTh>
+        <TableTh
+          key="value"
+        >
+          Value
+        </TableTh>
+      </TableTr>
+    </TableThead>
+    <tbody>
+      <TableTr
+        isSelected={false}
+        key="metric A"
+        onClick={[Function]}
+      >
+        <TableTd>
+          metric A
+        </TableTd>
+        <TableTd>
+          130.00
+        </TableTd>
+      </TableTr>
+      <TableTr
+        isSelected={false}
+        key="metric B"
+        onClick={[Function]}
+      >
+        <TableTd>
+          metric B
+        </TableTd>
+        <TableTd>
+          390.00
+        </TableTd>
+      </TableTr>
+    </tbody>
+  </TableTable>
+</TableContainer>
+`;

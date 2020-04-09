@@ -23,7 +23,7 @@ const Table = ({ data, onToggleMetric, selectedMetrics }) => {
         .slice(0, 2)
         .map((key) => (
           <TableTh key={key}>
-            {`${key.charAt(0).toUpperCase()}${key.slice(1)}s`}
+            {key.charAt(0).toUpperCase() + key.slice(1)}
           </TableTh>
         ));
     }

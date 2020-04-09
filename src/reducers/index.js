@@ -31,21 +31,9 @@ export default (state = initialState, action) => {
         error: '',
       };
     case GET_DATA_SUCCESS: {
-      const formatedData = Object.keys(action.data)
-        .slice(1, 19)
-        .map((k) => {
-          const values = action.data[k].times.map((x, i) => ({
-            time: x,
-            value: action.data[k].values[i],
-          }));
-          return {
-            metric: k,
-            dataset: values,
-          };
-        });
       return {
         ...state,
-        data: formatedData,
+        data: action.data,
         loading: false,
       };
     }
@@ -55,45 +43,15 @@ export default (state = initialState, action) => {
         loading: false,
         error: action.error,
       };
-    case SET_HOVER: {
-      let time;
-      let value;
-
-      switch (action.time) {
-        case 0:
-          time = '0';
-          break;
-        case '':
-          time = '';
-          break;
-        default:
-          time = action.time.toString();
-      }
-
-      switch (action.value) {
-        case 0:
-          value = '0';
-          break;
-        case '':
-          value = '';
-          break;
-        case null:
-          value = 'null';
-          break;
-        default:
-          value = action.value.toFixed(2);
-      }
-
+    case SET_HOVER:
       return {
         ...state,
         hoverLineGraph: !state.hoverLineGraph,
         hoveredMetric: action.metric,
         hoveredMetricColor: action.color,
-        hoveredTime: time,
-        hoveredValue: value,
+        hoveredTime: action.time,
+        hoveredValue: action.value,
       };
-    }
-
     case SET_LEGEND_POSITION:
       return {
         ...state,

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lines should render correctly given the required props 1`] = `
+<Fragment
+  key="metric A"
+>
+  <LinePath
+    d="M34 3535"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+    stroke="red"
+    transform="translate(-30, 0)"
+  />
+  <LinesPoints
+    color="red"
+    dataset={
+      Array [
+        Object {
+          "time": 0,
+          "value": 23,
+        },
+        Object {
+          "time": 10,
+          "value": 53,
+        },
+      ]
+    }
+    marginLeft={30}
+    metric="metric A"
+    onHover={[MockFunction]}
+    scales={
+      Object {
+        "mockXScale": [MockFunction],
+        "mockYScale": [MockFunction],
+      }
+    }
+  />
+</Fragment>
+`;

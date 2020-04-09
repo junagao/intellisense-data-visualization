@@ -6,5 +6,6 @@ export {
   AxisLabel,
   GraphContainer,
   Lines,
+  LinesPoints,
   Tooltip,
 } from 'components/Graph';

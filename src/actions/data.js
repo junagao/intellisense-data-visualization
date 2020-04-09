@@ -9,16 +9,16 @@ import {
   UNSELECT_METRIC,
 } from 'actions/types';
 
-const getDataRequest = () => ({
+export const getDataRequest = () => ({
   type: GET_DATA_REQUEST,
 });
 
-const getDataSuccess = (data) => ({
+export const getDataSuccess = (data) => ({
   type: GET_DATA_SUCCESS,
   data,
 });
 
-const getDataError = (error) => ({
+export const getDataError = (error) => ({
   type: GET_DATA_ERROR,
   error,
 });
@@ -28,23 +28,66 @@ export const getData = () => async (dispatch) => {
 
   try {
     const response = await api.get('/');
-    if (response.data.current.data['pt2-scaled'].status === 200) {
-      dispatch(getDataSuccess(response.data.current.data['pt2-scaled']));
+    const data = response.data.current.data['pt2-scaled'];
+    if (data.status === 500) {
+      dispatch(getDataError(data.message));
     } else {
-      dispatch(getDataError(response.data.current.data['pt2-scaled'].message));
+      const formatedData = Object.keys(data)
+        .slice(1, 19)
+        .map((k) => {
+          const values = data[k].times.map((x, i) => ({
+            time: x,
+            value: data[k].values[i],
+          }));
+          return {
+            metric: k,
+            dataset: values,
+          };
+        });
+      dispatch(getDataSuccess(formatedData));
     }
   } catch (e) {
     dispatch(getDataError(e.message));
   }
 };
 
-export const setHover = (metric, color, time = '', value = '') => ({
-  type: SET_HOVER,
-  metric,
-  color,
-  time,
-  value,
-});
+export const setHover = (metric, color, time = '', value = '') => {
+  let formatedTime = time;
+  let formatedValue = value;
+
+  switch (time) {
+    case 0:
+      formatedTime = '0';
+      break;
+    case '':
+      formatedTime = '';
+      break;
+    default:
+      formatedTime = time.toString();
+  }
+
+  switch (value) {
+    case 0:
+      formatedValue = '0';
+      break;
+    case '':
+      formatedValue = '';
+      break;
+    case null:
+      formatedValue = 'null';
+      break;
+    default:
+      formatedValue = value.toFixed(2);
+  }
+
+  return {
+    type: SET_HOVER,
+    metric,
+    color,
+    time: formatedTime,
+    value: formatedValue,
+  };
+};
 
 export const setLegendPosition = (x, y) => ({
   type: SET_LEGEND_POSITION,

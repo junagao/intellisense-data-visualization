@@ -56,7 +56,9 @@
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "lint-staged": "^10.0.9",
+    "moxios": "^0.4.0",
     "prettier": "^2.0.2",
+    "redux-mock-store": "^1.5.4",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
