@@ -1,12 +1,7 @@
 import React from 'react';
 
-import { SpinnerDiv, SpinnerDoubleBounceDiv } from './Loading.styles';
+import SpinnerDiv from './Loading.styles';
 
-const Loading = () => (
-  <SpinnerDiv>
-    <SpinnerDoubleBounceDiv />
-    <SpinnerDoubleBounceDiv />
-  </SpinnerDiv>
-);
+const Loading = () => <SpinnerDiv />;
 
 export default Loading;

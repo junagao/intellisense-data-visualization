@@ -51,12 +51,9 @@ export class App extends React.Component {
       error,
     } = this.props;
 
-    if (loading) {
-      return <Loading />;
-    }
-
     return (
       <AppContainer>
+        {loading && <Loading />}
         {error.length ? (
           <Error error={error} />
         ) : (
