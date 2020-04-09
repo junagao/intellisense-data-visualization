@@ -141,24 +141,9 @@ const GraphContainer = ({
             metrics={metrics}
             transform={`translate(-${marginLeft}, 0)`}
             onHover={onHover}
+            scales={{ xScale, yScale }}
+            marginLeft={marginLeft}
           />
-          {metrics.map(({ metric, dataset, color }) => (
-            <g key={color} fill={color}>
-              {dataset.map(({ time, value }) => (
-                <circle
-                  key={time}
-                  cx={xScale(time) - marginLeft}
-                  cy={yScale(value)}
-                  r="3"
-                  stroke="#fff"
-                  onMouseOver={() => onHover(metric, color, time, value)}
-                  onFocus={() => onHover(metric, color, time, value)}
-                  onMouseOut={() => onHover(metric, color, time, value)}
-                  onBlur={() => onHover(metric, color, time, value)}
-                />
-              ))}
-            </g>
-          ))}
         </g>
       </GraphSvg>
     </GraphDiv>
