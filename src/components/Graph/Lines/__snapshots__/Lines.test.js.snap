@@ -2,7 +2,7 @@
 
 exports[`Lines should render correctly given the required props 1`] = `
 <Fragment
-  key="metric A"
+  key="91e7490d-9b76-43a4-b7d3-192647683096"
 >
   <LinePath
     d="M34 3535"

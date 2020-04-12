@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 
 import { LinesPoints } from 'components';
 import LinePath from './Lines.styles';
 
 const Lines = ({ metrics, onHover, transform, scales, marginLeft }) => {
   return metrics.map(({ metric, path, color, dataset }) => (
-    <React.Fragment key={metric}>
+    <React.Fragment key={uuidv4()}>
       <LinePath
         d={path}
         stroke={color}

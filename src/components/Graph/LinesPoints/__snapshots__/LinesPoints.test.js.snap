@@ -6,7 +6,7 @@ exports[`LinesPoints should render correctly given the required props 1`] = `
 >
   <circle
     cx={NaN}
-    key="0"
+    key="5fcd0c6d-fe7b-4972-8afd-2c436b2e7b8e"
     onBlur={[Function]}
     onFocus={[Function]}
     onMouseOut={[Function]}
@@ -16,7 +16,7 @@ exports[`LinesPoints should render correctly given the required props 1`] = `
   />
   <circle
     cx={NaN}
-    key="10"
+    key="85204f5b-94d1-4b65-9e6d-35687fa08a2a"
     onBlur={[Function]}
     onFocus={[Function]}
     onMouseOut={[Function]}

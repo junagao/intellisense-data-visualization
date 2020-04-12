@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 
 const LinesPoints = ({
   metric,
@@ -14,7 +15,7 @@ const LinesPoints = ({
     <g fill={color}>
       {dataset.map(({ time, value }) => (
         <circle
-          key={time}
+          key={uuidv4()}
           cx={xScale(time) - marginLeft}
           cy={yScale(value)}
           r="3"

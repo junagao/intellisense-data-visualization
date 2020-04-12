@@ -587,7 +587,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={0}
                           cy={395.38461538461536}
-                          key="0"
+                          key="a29cb0f5-fedb-4cf3-92c9-8152c59aa53a"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
@@ -598,7 +598,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={188.33333333333337}
                           cy={367.5}
-                          key="5"
+                          key="36186b72-379a-40b8-acd1-b6d3a9e5a095"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
@@ -609,7 +609,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={376.6666666666667}
                           cy={356.92307692307696}
-                          key="10"
+                          key="422910a4-f8f0-4b13-8308-d280aa326cce"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
@@ -620,7 +620,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={565}
                           cy={280.00000000000006}
-                          key="15"
+                          key="07c8458e-3939-480d-98e8-a4c340a00873"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
@@ -688,7 +688,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={0}
                           cy={405}
-                          key="0"
+                          key="fd0fed70-9fb6-47e0-ae2b-a027d2be2d3e"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
@@ -699,7 +699,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={188.33333333333337}
                           cy={381.92307692307696}
-                          key="5"
+                          key="1d739dfd-cf37-43b0-999f-25413b4ae008"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
@@ -710,7 +710,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={376.6666666666667}
                           cy={363.65384615384613}
-                          key="10"
+                          key="dae6df20-a09d-4b3f-8cb6-a884cb45ae27"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
@@ -721,7 +721,7 @@ exports[`App should render correctly 1`] = `
                         <circle
                           cx={565}
                           cy={30}
-                          key="15"
+                          key="a40f471b-dc21-47be-b2ee-376c9aa1bd6e"
                           onBlur={[Function]}
                           onFocus={[Function]}
                           onMouseOut={[Function]}
